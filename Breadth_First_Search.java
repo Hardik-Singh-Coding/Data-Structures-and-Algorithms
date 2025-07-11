@@ -42,22 +42,23 @@ class BFSGraph{
 
     public void BFS(char start_vertex_data){
         boolean[] visited = new boolean[this.size];
-        int[] queue = new int[this.size];
+        int start_vertex = new String(vertexData).indexOf(start_vertex_data);
+
         int queue_start = 0;
         int queue_end = 0;
+        int[] queue = new int[this.size];
 
-        int start_vertex = new String(vertexData).indexOf(start_vertex_data);
-        queue[queue_end++] = start_vertex;
-        visited[start_vertex] = true; // 'D' enqueued
+        queue[queue_end++] = start_vertex; // Start vertex enqueued
+        visited[start_vertex] = true; // Start vertex marked as visited
 
-        while (queue_start < queue_end){ // BFS starts at 'D' from here 
-            int current_vertex = queue[queue_start++];
-            System.out.print(vertexData[current_vertex] + " ");
+        while (queue_start < queue_end){ // BFS loop 
+            int current_vertex = queue[queue_start++]; // Dequeue the current vertex 
+            System.out.print(vertexData[current_vertex] + " "); // Print the current vertex
 
-            for (int i=0; i < this.size; i++){
-                if (matrix[current_vertex][i] == 1 && !visited[i]){
-                    queue[queue_end++] = i;
-                    visited[i] = true;
+            for (int i=0; i < this.size; i++){ // Traverses through all the vertices
+                if (matrix[current_vertex][i] == 1 && !visited[i]){ // Checks for edge and not visited
+                    queue[queue_end++] = i; // Enqueuing
+                    visited[i] = true; // Mark the vertex as visited
                 }
             }
         }
