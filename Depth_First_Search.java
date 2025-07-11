@@ -40,18 +40,18 @@ class DFSGraph{
         }
     }
 
-    public void DFSUtil(int v, boolean[] visited){
+    public void DFSUtil(int v, boolean[] visited){ // This is used to check the edges between the visited and not-visited vertices
         visited[v] = true;
         System.out.print(vertexData[v] + " ");
 
-        for(int i=0; i < this.size; i++){
-            if(this.matrix[v][i] == 1 && !visited[i]){
+        for(int i=0; i < this.size; i++){ // Traverses through all the vertices
+            if(this.matrix[v][i] == 1 && !visited[i]){ // Checks the edge and visited array
                 DFSUtil(i, visited);
             }
         }
     }
 
-    public void DFS(char startVertexData){
+    public void DFS(char startVertexData){ // Defines the visited array. Defines the starting vertex index
         boolean[] visited = new boolean[this.size];
         int startVertex = new String(vertexData).indexOf(startVertexData);
         DFSUtil(startVertex, visited);
