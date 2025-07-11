@@ -60,28 +60,31 @@ class DFSGraph{
 
 public class Depth_First_Search {
     public static void main(String[]args){
-        DFSGraph g = new DFSGraph(7);
+        DFSGraph g = new DFSGraph(8);
 
-        g.addVertex(0, 'A');
-        g.addVertex(1, 'B');
-        g.addVertex(2, 'C');
-        g.addVertex(3, 'D');
-        g.addVertex(4, 'E');
-        g.addVertex(5, 'F');
-        g.addVertex(6, 'G');
+        g.addVertex(0, 'S');
+        g.addVertex(1, 'A');
+        g.addVertex(2, 'B');
+        g.addVertex(3, 'C');
+        g.addVertex(4, 'D');
+        g.addVertex(5, 'E');
+        g.addVertex(6, 'F');
+        g.addVertex(7, 'G');
 
+        g.addEdges(0, 1);
         g.addEdges(0, 2);
-        g.addEdges(0, 3);
-        g.addEdges(0, 4);
+        g.addEdges(1, 3);
+        g.addEdges(2, 3);
         g.addEdges(2, 4);
-        g.addEdges(2, 1);
-        g.addEdges(2, 5);
-        g.addEdges(2, 6);
+        g.addEdges(4, 6);
+        g.addEdges(6, 7);
         g.addEdges(1, 5);
+        g.addEdges(5, 6);
+        g.addEdges(5, 7);
 
         g.printGraph();
 
-        System.out.println("Depth First Search starting from vertex D: ");
-        g.DFS('D');
+        System.out.println("Depth First Search starting from vertex S: ");
+        g.DFS('S');
     }
 }
