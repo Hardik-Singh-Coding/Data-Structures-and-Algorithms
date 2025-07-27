@@ -1,3 +1,4 @@
+package Basics;
 public class Fibonacci {
     static int fibo(int n){
         if (n<=1){

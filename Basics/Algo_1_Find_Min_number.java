@@ -1,3 +1,4 @@
+package Basics;
 public class Algo_1_Find_Min_number {
     public static void main(String[] args){
         int[] number = {20, 4, 5, 6, 7,10};
