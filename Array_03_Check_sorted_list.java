@@ -2,11 +2,10 @@ public class Array_03_Check_sorted_list {
     static boolean sorted(int[] nums){
         for(int i=1; i<nums.length; i++){
             if(nums[i] >= nums[i-1]){
-                continue;
+                // continue;
             }
-            else if(nums[i] < nums[i-1]){
+            else
                 return false;
-            }
         }
         return true;
     }
